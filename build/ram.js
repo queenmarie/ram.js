@@ -22,7 +22,7 @@
   ram.v = 'ram.js javascript framework : Version 0.0.1';
   ram.arki = 'AMD';
   ram.io = 'need anything? dont know how to get it? visit ram.io today lol';
-  ram.author = 'Marie'
+  ram.author = 'Marie, Ritwick'
 
   /**
    * This alias will be used as an alternative to `ram()`.
