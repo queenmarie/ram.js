@@ -1,4 +1,5 @@
-# ram.js
-a javascript framework
-pretty much incomplete... just run ram.html and follow the instructions.
-a better documentation will be provided.
+# Ram.js
+Ramjs is an opensource javascript framework
+pretty much incomplete... just run ram.html and follow the onscreen instructions. 
+
+A better documentation will be provided soon.
