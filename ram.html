@@ -4,7 +4,7 @@
 	<title>Ram.js</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="build/ram.js" type="text/javascript"></script>
-	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
@@ -40,7 +40,7 @@
 			text-align: center;
 			color: 	#c15034;
 		}
-		.content{
+		.content, pre{
 			margin: 5px 5px;
 			width: relative;
 			padding: 10px 10px;
@@ -67,6 +67,11 @@
 			font-weight: bold;
 			background-color: #c15034;
 		}
+		#no_align, pre{
+			color: white;
+			text-align: left;
+			background-color: #2f2f2f;
+		}
 	</style>
 	<div class="container">
 		<h1 id="head">Ram</h1>
@@ -88,45 +93,210 @@
 					<ul class="nav navbar-nav">
 						<li><a href="https://github.com/queenmarie/ram.js/blob/master/README.md">Docs <span class="sr-only">(current)</span></a></li>
 						<li><a id="help" href="#">Help</a></li>
-					</ul>
+						<li><a id="help_4" href="#">Components</a>
+							<li><a id="license_c" href="#">License</a>
+							</ul>
 
-					<ul class="nav navbar-nav navbar-right">
-						<li id="ram"><a href="#">Ram.io</a></li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
-		<div class="content">
-			<p>This is the <strong>ram.js</strong> javascript framework <code>ram()</code></p>
-			<p>Feel free to play around with ram.js, just open your browser's dev console</p>
-			<p>You can also use the <code>$r()</code> alias.</p>
+							<ul class="nav navbar-nav navbar-right">
+								<li id="ram"><a href="#">Ram.io</a></li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+				<div class="content">
+					<p>This is the <strong>ram.js</strong> javascript framework <code>ram()</code></p>
+					<p>Feel free to play around with ram.js, just open your browser's dev console</p>
+					<p>You can also use the <code>$r()</code> alias.</p>
+				</div>
+				<div class="content_help" id="license">
+			The MIT License (MIT)<br>
+			<code>Copyright (c) 2016 Ritwick, Marie</code><br>
+			<br>
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+			<br>
+			The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+			<br>
+			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		</div>
+				<div class="content_help" id="help_d1">
+					There is JavaScript running on this page right now. Let's play around with it a little. For the sake of simplicity I'll assume you are using Google Chrome to read this page (if you aren't it's probably easier on both of us if you follow along with Chrome).
 
-		<div class="content_help" id="help_d">
-			<p> Press CTRL + Shift + J to open the console and start using RamJs</p>
-			<img src="http://s32.postimg.org/4mxr85kbp/console.gif" />
-		</div><br>
-		<div class="content_help" id="help_d2">
-			<p>Try entering <code>ram.v</code></p>
-			<p>or <code>ram.author</code></p>
+					First, right click anywhere on the screen and hit Inspect Element, then click on the Console tab. You should see a thingy that looks like this:
+					<p> Press CTRL + Shift + J to open the console and start using RamJs</p>
+					<img src="http://s32.postimg.org/4mxr85kbp/console.gif" />
+					<a id="help_2">click</a> here to continue
+				</div><br>
+				<div class="content_help" id="help_d2">
+					<p>Try entering <code>ram.v</code></p>
+					<p>or <code>ram.author</code></p>
+					<a id="help_3">click</a> here to continue
+
+				</div>
+				<br>
+				<div class="components content_help">
+					<h2>1. ram.('selector')</h2>
+					<p>The ram object.  Use `ram('selector')` for quick DOM access when built with the DOM module.<br>
+						@returns {Object} The ram object, run through `init`<br>
+						Example: <code>ram.('li')</code>
+					</p>
+				</div>
+				<br>
+				<div class="components content_help">
+					<h2>2. object.isArray()</h2>
+					<p>Determine if an object is an `Array`.
+						<br>
+						@param {Object} object An object that may or may not be an array
+						@returns {Boolean} True if the parameter is an array.<br>
+						Example: <code>ram.isArray()</code>
+					</p>
+				</div>
+				<br>
+				<div class="components content_help">
+					<h2>3. object.toArray()</h2>
+					<p>Convert an `Array`-like collection into an `Array`.
+						<br>
+						@param {Object} collection A collection of items that responds to length
+						@returns {Array} An `Array` of items.<br>
+						Example: <code>ram.toArray()</code>
+					</p>
+				</div>
+				<br>
+				<div class="components content_help">
+					<h2>4. object.isNumber()</h2>
+					<p>Determines if an object is a `Number`.
+						<br>
+						@param {Object} object A value to test
+						@returns {Boolean} True if the object is a Number.<br>
+						Example: <code>ram.isNumber()</code>
+					</p>
+				</div>
+				<br>
+				<div class="components content_help">
+					<h2>5. object.bind()</h2>
+					<p>Binds a function to an object.
+						<br>
+						@param {Function} fn A function
+						@param {Object} object An object to bind to
+						@returns {Function} A rebound method<br>
+						Example: <code>ram.bind()</code>
+					</p>
+				</div>
+				<br>
+				<div class="components content_help">
+					<h2>6. object.addDetection()</h2>
+					<p>Used to add feature-detection methods.
+						<br>
+						@param {String} name The name of the test
+						@param {Function} fn The function that performs the test.<br>
+						Example: <code>ram.bind()</code>
+					</p>
+				</div>
+				<br>
+				<div class="components content_help">
+					<h2>7. object.detect()</h2>
+					<p>Run a feature detection name.
+						<br>
+						@param {String} name The name of the test
+						@returns {Boolean} The outcome of the test<br>
+						Example: <code>ram.detect()</code>
+					</p>
+				</div>
+				<br>
+				<div class="components content_help" id="no_align">
+					<h2 style="text-align: center;">8. The ram Class</h2>
+					<p>
+					<pre><code>
+User = ram.Class({
+	initialize: function(name, age) {
+		this.name = name;
+		this.age  = age;
+	}
+});
+					</code></pre>
+				<br>
+				<p style="text-align: center;">Example: <code>new User('Ritwick', '52');</code>
+</p>
+			</p>
 		</div>
 		<br>
+		<div class="components content_help">
+			<h2>6. Mixins</h2>
+			  <p style="text-align: center;">Objects can be embedded within each other:</p>
+
+			<p> <pre><code> 
+ 
+      MixinUser = ram.Class({
+        include: User,
+ 
+        initialize: function(log) {
+          this.log = log;
+        }
+      });</code></pre>
+ 			</p>
+		</div>
+		<br>
+		<div class="components content_help" id="no_align">
+			<h2 style="text-align: center;">7. Inheritance</h2>
+			<p>
+ 
+ <p style="text-align: center;"> Pass an object to `ram.Class` to inherit from it.</p>
+ <pre><code>
+      SuperUser = ram.Class(User, {
+        initialize: function() {
+          this.$super('initialize', arguments);
+        },
+ 
+        toString: function() {
+          return "SuperUser: " + this.$super('toString');
+        }
+      });</code></pre><br>
+				
+			</p>
+		</div>
+		<br>
+		<div class="components content_help" id="no_align">
+			<h2 style="text-align: center;">8. Enumrable module</h2>
+			<p style="text-align: center;">
+				This is bound to DOM objects:
+				<br><pre><code>
+global('p').each(function() {
+	// `this` contains a DOM element
+});</pre></code><br>
+			<p style="text-align: center">			Iterates using a function over a set of items
+ Example: <pre><code>ram.enumerable.each([1, 2, 3], function(n) {
+    console.log(n);
+});</code></pre></p>
+<p style="text-align: inherit;">@param {Object} enumerable A set of items that responds to `length`
+       <br> @param {Function} callback The function to run
+       <br> @param {Object} [context] An optional parameter to determine `this` in the callback
+       <br> @returns {Object} The passed in enumerable object</p>
+		</p>
 	</div>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		$('#help_d').hide();
-		$('#help_d2').hide();
-		$('#help').click(function(){
-			$('#help_d').toggle();
-		});
-		$('#help').click(function(){
-			$('#help_d2').toggle();
-		});
-		$(".nav a").on("click", function(){
-			$(".nav").find(".active").removeClass("active");
-			$(this).parent().addClass("active");
-		});
-	</script>
-</body>
-</html>
+		<br>
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$('.content_help').hide();
+			$('#help').click(function(){
+				$('#help_d1').toggle();
+			});
+			$('#help_2').click(function(){
+				$('#help_d2').toggle();
+			});
+			$('#help_3').click(function(){
+				$('.components').toggle();
+			});
+			$('#help_4').click(function(){
+				$('.components').toggle();
+			});
+			$('#license_c').click(function(){
+				$('#license').toggle();
+			});
+			$(".nav a").on("click", function(){
+				$(".nav").find(".active").removeClass("active");
+				$(this).parent().addClass("active");
+			});
+		</script>
+	</body>
+	</html>
